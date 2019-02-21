@@ -6,62 +6,49 @@ var turn = 1;
 
 function comenzar()
 {
-	variablecitas();
-	EnemyHP = Math.floor(Math.random() * 300) +100;
-	document.getElementById("EnemyHP").value = "Enemy HP = " + EnemyHP;
-	document.getElementById("HP").value = "Health points " + HP;
-	document.getElementById("SP").value = "Stamina points = " + SP;
 
+	document.getElementById("FormIngreso").style.display = "1"; 
+	document.getElementsByClassName("col-3 col-s-12")[0].style.display = "1";
 
-}
-function Atk()
-{
-	if (turn == 1 && SP > 0) {
-	Damage = Math.floor(Math.random() * 35) +10; // random damage.
+	 //Random Title Generator
 
-	if (15 > SP) { alert("you don't have enough stamina to make this move"); }
-		else { 
-			EnemyHP = EnemyHP -  Damage; 
-			SP = SP -15; 
-			document.getElementById("EnemyHP").value = "Enemy HP = " + EnemyHP;
-			document.getElementById("SP").value = "Stamina points = " + SP;
-			alert("you dealt " + Damage + " damage and lost 15 Stamina points");
-			} 
-		}
-		turn --;
-		document.getElementById("FormIngreso").getElementsByTagName("h1")[0].innerHTML = "Enemy turn";
-		turnoDelBot();	
-}
+	var RGDNumber = Math.floor(Math.random()*5) + 1;
 
-//FIN DE LA FUNCIÓN
-function papel()
-{
+	console.log(RGDNumber);
+	var RGDTitle1 = "A childish game, made by an unknown student.";
+	var RGDTitle2 = "You should pay attention to my game and definitely not to this text.";
+	var RGDTitle3 = "Yup, this is a random generated title and it's working perfectly fine!";
+	var RGDTitle4 = "Alvaro Juan Elena, you killed my father. prepare to die.";
+	var RGDTitle5 = "Ahhh un titulo en español, muuuucho mejor...";
 
-}//FIN DE LA FUNCIÓN
-function tijera()
-{
-	
-}//FIN DE LA FUNCIÓN
+	var currentTitle;
 
-function turnoDelBot()
-{	setTimeout(function(){
-	if (turn == 0) { 
-	Damage = Math.floor(Math.random() * 35) +10;
-	HP = HP -  Damage;
-	document.getElementById("HP").value = "Health points " + HP;
-	alert("enemy dealt " + Damage);
-	turn ++;
-	document.getElementById("FormIngreso").getElementsByTagName("h1")[0].innerHTML = "Its your turn";
-	} }, 1000);	
-}
+	switch (RGDNumber)
+	{
+		case 1:
+			currentTitle = RGDTitle1;
+		break; 
 
-function mostrarResultado()
-{
+		case 2:
+			currentTitle = RGDTitle2;
+		break; 
 
-}
-function variablecitas ()
-{
-	HP = parseInt(HP);
-	SP = parseInt(SP);
-	EnemyHP = parseInt(EnemyHP);
+		case 3:
+			currentTitle = RGDTitle3;
+		break; 
+
+		case 4:
+			currentTitle = RGDTitle4;
+		break; 
+
+		case 5:
+			currentTitle = RGDTitle5;
+		break; 
+
+	} 
+
+	document.getElementsByTagName("h5")[0].innerHTML = currentTitle;
+
+	 //Random Title Generator
+
 }
